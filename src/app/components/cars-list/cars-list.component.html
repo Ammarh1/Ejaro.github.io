@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg  bg-danger">
+    <img src = "../../../assets/logo.png" width="150" height="70" class ="m-1">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">  
+    </div>
+    <form class="form-inline m-2">
+        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Search">
+      
+        <button type="submit" class="btn btn-light mb-2">Submit</button>
+      </form>
+  
+</nav>
+
+
+<div class = "title">
+    <br>
+    <h1 class="text-center text-dark">Car Rent</h1>
+    <p class="text-center">_________________________________________________</p>
+</div>
+
+<div *ngFor = "let x of Cars; let i = index" class="list-inline-item">
+    <br>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{image[i]}}" alt="Card image cap" routerLink= "/">
+        <div class="card-body">
+          <h2 class="card-title">{{x.make}}</h2>
+          <h4 class="card-text">Model: {{x.model}}</h4>
+          <h4 class="card-text">Available From: {{x.Available_From}}</h4>
+          <h4 class="card-text">Available Until: {{x.Available_Until}}</h4>
+          <button routerLink="item/{{x.id}}" class="btn btn-primary">Book Now</button>
+        </div>
+      </div>
+</div>

@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg  bg-danger">
+    <img src = "../../../assets/logo.png" width="150" height="70" class ="m-1" routerLink= "/">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">  
+    </div>
+    <form class="form-inline m-2">
+        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Search">
+        <button type="submit" class="btn btn-light mb-2">Submit</button>
+      </form>
+</nav>
+
+<div class = "d-flex">
+<div>
+  <div class="text-nowrap m-5" style="width: 15rem;">
+      <h2>Information:</h2>
+      <h3>- Name: {{CarInformation.make}}.</h3>
+      <h3>- Car Model: {{CarInformation.make}}, {{CarInformation.model}}.</h3>
+      <h3>- Kilometers Traveled: {{CarInformation.Kilometers_Traveled}}.</h3>
+      <h3>- Location: {{CarInformation.Latitude}}, {{CarInformation.Longitude}}.</h3>
+      <h3>- Available from: {{CarInformation.Available_From}}.</h3>
+      <h3>- Available until: {{CarInformation.Available_Until}}.</h3>
+
+
+  </div>
+
+  <div class="text-nowrap m-5" style="width: 30rem;">
+      <h2>Images:</h2>
+      <ng-image-slider [images]="CarImages" #nav></ng-image-slider>
+  </div>
+  
+</div>
+
+
+<div class = "m-5">
+  <br>
+  <br>
+  <div>
+    <div class="alert alert-success" *ngIf= 'message$  as message'>{{message}}</div>
+  </div>
+  <h2>Booking:</h2>
+  <form class="row row-cols-sm-auto justify-content-end" (ngSubmit)="onSubmit()">
+    <div class="col-12">
+      <div class="input-group">
+        <input class="form-control" placeholder="From ..."
+              name="dp" [(ngModel)]="Start!" ngbDatepicker #d="ngbDatepicker" [markDisabled]="markDisabled">
+        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+      </div>
+    </div>
+
+    <div class="col-12">
+
+      <div class="input-group">
+        <input class="form-control" placeholder="To ..."
+              name="dp" [(ngModel)]="End!" ngbDatepicker #f="ngbDatepicker" [markDisabled]="markDisabled">
+        <button class="btn btn-outline-secondary calendar" (click)="f.toggle()" type="button"></button>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit" >Book Now</button>
+
+  </form>
+</div>
+
+</div>
+
+ 
+
+
+
+
+
