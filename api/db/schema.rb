@@ -52,29 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_18_055652) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "car_informations", force: :cascade do |t|
-    t.string "make"
-    t.string "model"
-    t.date "Available_From"
-    t.date "Available_Until"
-    t.string "image"
-    t.string "Kilometers_Traveled"
-    t.float "Longitude"
-    t.float "Latitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "car_lists", force: :cascade do |t|
-    t.string "make"
-    t.string "model"
-    t.date "Available_From"
-    t.date "Available_Until"
-    t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
 end
